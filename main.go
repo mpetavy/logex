@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	inputFile    = flag.String("i", "", "input file")
+	file         = flag.String("f", "", "input file")
 	search       common.MultiValueFlag
 	breaker      common.MultiValueFlag
 	breakerCount = flag.Int("bc", 1, "breaker count before")
@@ -28,11 +28,11 @@ func init() {
 func run() error {
 	var breakerLines []string
 
-	if !common.FileExists(*inputFile) {
-		return &common.ErrFileNotFound{FileName: *inputFile}
+	if !common.FileExists(*file) {
+		return &common.ErrFileNotFound{FileName: *file}
 	}
 
-	ba, err := ioutil.ReadFile(*inputFile)
+	ba, err := ioutil.ReadFile(*file)
 	if common.Error(err) {
 		return err
 	}
@@ -92,5 +92,5 @@ func run() error {
 func main() {
 	defer common.Done()
 
-	common.Run(nil)
+	common.Run([]string{"f", "s"})
 }
