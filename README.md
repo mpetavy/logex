@@ -1,8 +1,8 @@
-## HL7PRETTY
+## LOGEX
 
-### Project description of HL7PRETTY
+### Project description of LOGEX
 
-This is the automatic generated project description of HL7PRETTY. Stay tuned for updates :-)
+This is the automatic generated project description of LOGEX. Stay tuned for updates :-)
 
 ### License
 
