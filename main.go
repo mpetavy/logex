@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/mpetavy/common"
 	"io/ioutil"
+	"regexp"
 	"strings"
 )
 
@@ -36,6 +37,22 @@ func run() error {
 		return err
 	}
 
+	searchRegexps := make([]*regexp.Regexp, len(search))
+	for i, s := range search {
+		searchRegexps[i], err = regexp.Compile(s)
+		if common.Error(err) {
+			return err
+		}
+	}
+
+	breakerRegexps := make([]*regexp.Regexp, len(breaker))
+	for i, s := range breaker {
+		breakerRegexps[i], err = regexp.Compile(s)
+		if common.Error(err) {
+			return err
+		}
+	}
+
 	scanner := bufio.NewScanner(strings.NewReader(string(ba)))
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -44,14 +61,14 @@ func run() error {
 			line = fmt.Sprintf("%s...", line[:*lineLength])
 		}
 
-		for _, s := range search {
-			if strings.Contains(line, s) {
+		for _, searchRegexp := range searchRegexps {
+			if searchRegexp.MatchString(line) {
 				fmt.Printf("%s\n", line)
 			}
 		}
 
-		for _, s := range breaker {
-			if strings.Contains(line, s) {
+		for _, breakerRegexp := range breakerRegexps {
+			if breakerRegexp.MatchString(line) {
 				for _, bl := range breakerLines {
 					fmt.Printf("%s\n", bl)
 				}
@@ -60,11 +77,13 @@ func run() error {
 			}
 		}
 
-		if len(breakerLines) == *breakerCount {
-			breakerLines = breakerLines[1:]
-		}
+		if *breakerCount > 0 {
+			if len(breakerLines) == *breakerCount {
+				breakerLines = breakerLines[1:]
+			}
 
-		breakerLines = append(breakerLines, line)
+			breakerLines = append(breakerLines, line)
+		}
 	}
 
 	return nil
