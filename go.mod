@@ -2,7 +2,7 @@ module logex
 
 go 1.17
 
-require github.com/mpetavy/common v1.4.12
+require github.com/mpetavy/common v1.4.13
 
 require (
 	cloud.google.com/go v0.88.0 // indirect
@@ -29,7 +29,6 @@ require (
 	github.com/mattn/go-colorable v0.1.11 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/paulrosania/go-charset v0.0.0-20190326053356-55c9d7a5834c // indirect
-	github.com/pkg/errors v0.9.1 // indirect
 	github.com/quasoft/memstore v0.0.0-20191010062613-2bce066d2b0b // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
