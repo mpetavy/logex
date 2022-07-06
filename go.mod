@@ -2,7 +2,7 @@ module logex
 
 go 1.17
 
-require github.com/mpetavy/common v1.4.25
+require github.com/mpetavy/common v1.4.26
 
 require (
 	cloud.google.com/go v0.88.0 // indirect
@@ -22,7 +22,7 @@ require (
 	github.com/grantae/certinfo v0.0.0-20170412194111-59d56a35515b // indirect
 	github.com/h2non/filetype v1.1.1 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
-	github.com/kardianos/service v1.2.1-0.20210610114949-8eb6809ed2e7 // indirect
+	github.com/kardianos/service v1.2.1 // indirect
 	github.com/labstack/echo-contrib v0.11.0 // indirect
 	github.com/labstack/echo/v4 v4.6.3 // indirect
 	github.com/labstack/gommon v0.3.1 // indirect
@@ -38,7 +38,7 @@ require (
 	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5 // indirect
 	golang.org/x/net v0.0.0-20210913180222-943fd674d43e // indirect
 	golang.org/x/oauth2 v0.0.0-20210628180205-a41e5a781914 // indirect
-	golang.org/x/sys v0.0.0-20211103235746-7861aae1554b // indirect
+	golang.org/x/sys v0.0.0-20220704084225-05e143d24a9e // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac // indirect
 	google.golang.org/api v0.51.0 // indirect
