@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/mpetavy/common"
-	"io/ioutil"
+	"os"
 	"regexp"
 	"strings"
 )
@@ -32,7 +32,7 @@ func run() error {
 		return &common.ErrFileNotFound{FileName: *file}
 	}
 
-	ba, err := ioutil.ReadFile(*file)
+	ba, err := os.ReadFile(*file)
 	if common.Error(err) {
 		return err
 	}
