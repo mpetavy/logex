@@ -2,7 +2,7 @@ module logex
 
 go 1.17
 
-require github.com/mpetavy/common v1.4.39
+require github.com/mpetavy/common v1.4.40
 
 require (
 	cloud.google.com/go v0.88.0 // indirect
