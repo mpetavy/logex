@@ -1,6 +1,6 @@
 module logex
 
-go 1.17
+go 1.19
 
 require github.com/mpetavy/common v1.4.42
 
