@@ -19,7 +19,7 @@ var (
 )
 
 func init() {
-	common.Init("1.0.0", "", "", "2018", "log file extractor", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
+	common.Init("logex", "1.0.0", "", "", "2018", "log file extractor", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
 
 	flag.Var(&search, "s", "text to search for")
 	flag.Var(&breaker, "b", "text to bread after")
