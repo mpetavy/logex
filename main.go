@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"embed"
 	"flag"
 	"fmt"
 	"github.com/mpetavy/common"
@@ -18,8 +19,11 @@ var (
 	lineLength   = flag.Int("ll", 120, "max line length")
 )
 
+//go:embed go.mod
+var resources embed.FS
+
 func init() {
-	common.Init("logex", "", "", "", "2018", "log file extractor", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
+	common.Init("", "", "", "", "log file extractor", "", "", "", &resources, nil, nil, run, 0)
 
 	flag.Var(&search, "s", "text to search for")
 	flag.Var(&breaker, "b", "text to bread after")
